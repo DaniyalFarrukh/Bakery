@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pistachio-deep: #1F3B2D;
+  --color-saffron: #E39A1B;
+  --color-gulab-rose: #B8395A;
+  --color-malai: #FAF7F0;
+  --color-varq-silver: #BFC5C9;
+  --color-ink: #1B1714;
+  
+  --font-serif: var(--font-young-serif), serif;
+  --font-sans: var(--font-figtree), sans-serif;
+  --font-urdu: var(--font-noto-nastaliq), serif;
+}
+
+@layer utilities {
+  .font-urdu {
+    font-family: var(--font-urdu);
+    line-height: 2;
+  }
+}
+
+/* Base resets & utilities */
+@layer base {
+  body {
+    background-color: var(--color-malai);
+    color: var(--color-ink);
+  }
+}
+
+/* Shimmer effect for the signature wordmark */
+@keyframes sweep {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    120deg,
+    var(--color-malai) 40%,
+    var(--color-varq-silver) 50%,
+    var(--color-malai) 60%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: sweep 2.5s ease-in-out 1;
+}
+
+@media (prefers-reduced-motion) {
+  .shimmer-text {
+    animation: none;
+    background: none;
+    color: var(--color-malai);
+  }
+}
+
+/* Hide scrollbar for the grid/filters if needed */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
