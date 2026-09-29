@@ -42,20 +42,20 @@ export default function Home() {
       <SweetsMenu />
 
       {/* 4. Gifting Band */}
-      <section id="gifting" className="relative py-24 bg-saffron text-ink overflow-hidden">
+      <section id="gifting" className="relative py-20 md:py-24 bg-saffron text-ink overflow-hidden">
         {/* Subtle patterned background or radial gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-malai)_0%,_transparent_70%)] opacity-20 mix-blend-overlay pointer-events-none" />
         
-        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
-          <h2 className="font-serif text-4xl md:text-5xl mb-6">{t.gifting.title}</h2>
-          <p className="max-w-2xl mx-auto text-lg mb-10 text-ink/80">
+        <div className="container mx-auto px-6 md:px-12 text-center relative z-10">
+          <h2 className="font-serif text-4xl md:text-5xl mb-6 leading-tight">{t.gifting.title}</h2>
+          <p className="max-w-2xl mx-auto text-lg mb-10 text-ink/80 leading-relaxed px-4">
             {t.gifting.desc}
           </p>
           <a 
             href={`https://wa.me/${siteConfig.whatsappNumber}?text=Hello, I want to inquire about custom gift boxes.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-ink text-saffron font-bold rounded-full hover:bg-ink/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+            className="inline-flex items-center justify-center px-8 py-4 bg-ink text-saffron font-bold rounded-full hover:bg-ink/90 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 w-full sm:w-auto"
           >
             {t.gifting.cta}
           </a>
@@ -142,22 +142,22 @@ export default function Home() {
       </section>
 
       {/* 9. Visit Us */}
-      <section id="visit" className="py-24 bg-pistachio-deep text-malai">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+      <section id="visit" className="py-20 md:py-24 bg-pistachio-deep text-malai">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-16">
             <div className="w-full md:w-1/2">
-              <h2 className="font-serif text-4xl md:text-5xl text-saffron mb-6">{t.visit.title}</h2>
-              <div className="space-y-4 mb-8 text-lg">
-                <p className="flex items-start">
-                  <strong className="w-24 shrink-0 text-saffron">{t.visit.address}:</strong>
+              <h2 className="font-serif text-4xl md:text-5xl text-saffron mb-8 leading-tight">{t.visit.title}</h2>
+              <div className="space-y-6 mb-10 text-lg">
+                <p className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                  <strong className="w-full sm:w-28 shrink-0 text-saffron">{t.visit.address}:</strong>
                   <span>{lang === "ur" ? siteConfig.addressUr : siteConfig.address}</span>
                 </p>
-                <p className="flex items-start">
-                  <strong className="w-24 shrink-0 text-saffron">{t.visit.hours}:</strong>
+                <p className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                  <strong className="w-full sm:w-28 shrink-0 text-saffron">{t.visit.hours}:</strong>
                   <span>{lang === "ur" ? siteConfig.hoursTextUr : siteConfig.hoursText}</span>
                 </p>
-                <p className="flex items-start">
-                  <strong className="w-24 shrink-0 text-saffron">{t.visit.phone}:</strong>
+                <p className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                  <strong className="w-full sm:w-28 shrink-0 text-saffron">{t.visit.phone}:</strong>
                   <span dir="ltr">{siteConfig.phone}</span>
                 </p>
               </div>
@@ -165,15 +165,15 @@ export default function Home() {
                 href={siteConfig.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-malai text-pistachio-deep font-semibold rounded-full hover:bg-white transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 bg-malai text-pistachio-deep font-bold rounded-full hover:bg-white transition-colors w-full sm:w-auto"
               >
                 {t.visit.directions}
               </a>
             </div>
             <div className="w-full md:w-1/2 text-center md:text-right">
-              <div className="p-8 border border-malai/20 rounded-3xl bg-white/5 inline-block">
-                <h3 className="font-serif text-2xl mb-4">{t.visit.questions}</h3>
-                <p className="mb-6 text-malai/80">{t.visit.questionsDesc}</p>
+              <div className="p-8 md:p-10 border border-malai/20 rounded-3xl bg-white/5 inline-block w-full">
+                <h3 className="font-serif text-2xl md:text-3xl mb-4">{t.visit.questions}</h3>
+                <p className="mb-8 text-malai/80 text-lg leading-relaxed">{t.visit.questionsDesc}</p>
                 <a 
                   href={`https://wa.me/${siteConfig.whatsappNumber}`}
                   target="_blank"

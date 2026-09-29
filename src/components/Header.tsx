@@ -18,13 +18,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-malai/95 backdrop-blur-md border-b border-varq-silver/30 shadow-sm">
-      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 h-20 md:h-24 flex items-center justify-between">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 h-16 sm:h-20 md:h-24 flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex flex-col items-center sm:items-start group" onClick={closeMenu}>
-          <span className="font-serif text-2xl md:text-3xl font-bold text-pistachio-deep leading-none tracking-tight group-hover:text-saffron transition-colors">
+          <span className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-pistachio-deep leading-none tracking-tight group-hover:text-saffron transition-colors">
             {siteConfig.shopNameEn}
           </span>
-          <span className="font-urdu text-xl text-ink/70 mt-1 sm:mt-2">
+          <span className="font-urdu text-lg sm:text-xl text-ink/70 mt-0.5 sm:mt-1 md:mt-2">
             {siteConfig.shopNameUr}
           </span>
         </Link>
@@ -80,33 +80,33 @@ export function Header() {
         </div>
 
         {/* Mobile Toggle & Bag */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex md:hidden items-center gap-2 sm:gap-3">
           <button
             onClick={toggleLang}
             className="flex items-center gap-1 p-2 text-ink/80 hover:text-saffron font-semibold"
             aria-label="Toggle language"
           >
-            <Globe className="w-5 h-5" />
-            <span>{lang === "en" ? "اردو" : "EN"}</span>
+            <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="text-sm sm:text-base">{lang === "en" ? "اردو" : "EN"}</span>
           </button>
           <button
             onClick={() => setDrawerOpen(true)}
             className="relative p-2 text-pistachio-deep"
             aria-label="Open order list"
           >
-            <ShoppingBag className="w-6 h-6" />
+            <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
             {totalItems > 0 && (
-              <span className="absolute top-0 right-0 w-5 h-5 bg-saffron text-ink text-xs font-bold flex items-center justify-center rounded-full transform translate-x-1 -translate-y-1">
+              <span className="absolute top-0 right-0 w-4 h-4 sm:w-5 sm:h-5 bg-saffron text-ink text-[10px] sm:text-xs font-bold flex items-center justify-center rounded-full transform translate-x-1 -translate-y-1">
                 {totalItems}
               </span>
             )}
           </button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-pistachio-deep"
+            className="p-1.5 sm:p-2 text-pistachio-deep"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
       </div>

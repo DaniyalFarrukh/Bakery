@@ -151,31 +151,31 @@ function ProductCard({ product, onOpenModal }: { product: Product, onOpenModal: 
             ))}
           </div>
 
-          <div className="flex items-center justify-between" onClick={(e) => e.stopPropagation()}>
-            <span className="font-semibold text-lg text-pistachio-deep">
+          <div className="flex flex-wrap items-center justify-between gap-4 mt-2" onClick={(e) => e.stopPropagation()}>
+            <span className="font-semibold text-lg text-pistachio-deep shrink-0">
               Rs. {activeUnit.price}
             </span>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <div className="flex items-center bg-white border border-varq-silver/40 rounded-full px-2 py-1">
                 <button 
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="p-1 text-ink/60 hover:text-ink"
                 >
-                  <Minus className="w-4 h-4" />
+                  <Minus className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
-                <span className="w-5 text-center text-sm font-medium">{quantity}</span>
+                <span className="w-4 sm:w-5 text-center text-sm font-medium">{quantity}</span>
                 <button 
                   onClick={() => setQuantity(quantity + 1)}
                   className="p-1 text-ink/60 hover:text-ink"
                 >
-                  <Plus className="w-4 h-4" />
+                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
               
               <button 
                 onClick={handleAdd}
-                className="bg-saffron text-ink font-semibold px-4 py-2 rounded-full text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
+                className="bg-saffron text-ink font-semibold px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm hover:opacity-90 transition-opacity whitespace-nowrap"
               >
                 {t.menu.addToOrder}
               </button>
