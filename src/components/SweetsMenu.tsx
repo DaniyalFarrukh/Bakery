@@ -232,21 +232,21 @@ function ProductModal({ product, onClose }: { product: Product, onClose: () => v
       />
       
       <div 
-        className="relative bg-malai w-full max-w-5xl max-h-[90vh] sm:h-[80vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-200"
+        className="relative bg-malai w-full max-w-5xl max-h-[90vh] sm:max-h-[85vh] rounded-3xl overflow-y-auto md:overflow-hidden shadow-2xl flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-200 hide-scrollbar"
         role="dialog"
         aria-modal="true"
       >
         {/* Close Button */}
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-white/50 backdrop-blur-md text-ink hover:text-gulab-rose rounded-full transition-colors"
+          className="sticky md:absolute top-4 right-4 z-50 p-2 bg-white/80 backdrop-blur-md text-ink hover:text-gulab-rose rounded-full transition-colors self-end md:self-auto -mb-12 md:mb-0 mr-4 md:mr-0 shadow-sm"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Left: Image */}
-        <div className="relative w-full md:w-2/5 h-64 md:h-auto bg-varq-silver/20 shrink-0">
+        <div className="relative w-full md:w-2/5 h-64 sm:h-80 md:h-auto bg-varq-silver/20 shrink-0">
           <div className="absolute inset-0 flex items-center justify-center bg-malai">
             <span className="font-urdu text-4xl text-pistachio-deep/20">{product.nameUr}</span>
           </div>
@@ -262,7 +262,7 @@ function ProductModal({ product, onClose }: { product: Product, onClose: () => v
         </div>
 
         {/* Right: Content */}
-        <div className="flex-1 p-6 md:p-12 overflow-y-auto hide-scrollbar flex flex-col">
+        <div className="flex-1 p-5 sm:p-6 md:p-12 md:overflow-y-auto hide-scrollbar flex flex-col">
           <div className="mb-2">
             <span className="uppercase text-xs font-bold tracking-wider text-saffron bg-saffron/10 px-4 py-1.5 rounded-full">
               {product.category.replace("-", " ")}
